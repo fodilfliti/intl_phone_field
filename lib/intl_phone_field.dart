@@ -117,6 +117,9 @@ class IntlPhoneField extends StatefulWidget {
   /// [Decoration.enabled] property.
   final bool enabled;
 
+  /// if true show country phone number in [TextFormField]
+  final bool showCountryPhoneNumber;
+  
   /// The appearance of the keyboard.
   ///
   /// This setting is only honored on iOS devices.
@@ -277,6 +280,7 @@ class IntlPhoneField extends StatefulWidget {
     this.dropdownDecoration = const BoxDecoration(),
     this.inputFormatters,
     this.enabled = true,
+    this.showCountryPhoneNumber = true,
     this.keyboardAppearance,
     @Deprecated('Use searchFieldInputDecoration of PickerDialogStyle instead') this.searchText = 'Search country',
     this.dropdownIconPosition = IconPosition.leading,
@@ -483,6 +487,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                         ),
                   const SizedBox(width: 8),
                 ],
+                if(widget.showCountryPhoneNumber)
                 FittedBox(
                   child: Text(
                     '+${_selectedCountry.dialCode}',
