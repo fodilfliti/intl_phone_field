@@ -466,7 +466,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(
-                  width: 4,
+                  width: 8,
                 ),
                 if (widget.enabled &&
                     widget.showDropdownIcon &&
@@ -485,7 +485,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                           _selectedCountry.flag,
                           style: const TextStyle(fontSize: 18),
                         ),
-                  const SizedBox(width: 8),
+               if(widget.showCountryPhoneNumber)    const SizedBox(width: 8),
                 ],
                 if(widget.showCountryPhoneNumber)
                 FittedBox(
